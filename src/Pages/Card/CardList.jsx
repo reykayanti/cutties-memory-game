@@ -1,17 +1,16 @@
-import React from 'react'
-import { assets } from '../../assets/assets'
+// import React, { useState } from 'react'
+// import { assets } from '../../assets/assets'
 
-const CardList = ({nama}) => {
+// const CardList = ({cards}) => {
     
-    return (
-        <div className='card-list'>
-            {nama.map((item, index)=>(
-                <div key={index}>
-                    <h3>{item}</h3>
-                </div>
-            ))}
-        </div>
-    );
-}
+//     console.log(cards);
 
-export default CardList
+//     //flip
+    
+
+//     return (
+       
+//     );
+// }
+
+// export default CardList
