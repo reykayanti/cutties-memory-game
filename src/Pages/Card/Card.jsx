@@ -29,6 +29,15 @@ const Card = () => {
   const [match, setMatch] = useState([])
 
   const handleFlip = (index) => {
+
+    if (cards[index].match){
+      return;
+    }
+
+    const newCards = [...cards];
+    newCards[index].flip = true;
+    setCards(newCards);
+
     if (flippedIndices.length < 2 && !flip[index]){ // flip[index] yaitu menyimpan status flip = status false
       const newFlipState = [...flip];
       newFlipState[index] = !newFlipState[index]; // Membalik status flip kartu yang dipilih
@@ -39,10 +48,26 @@ const Card = () => {
 
       const flippedCards = cards.filter(card => card.flip === true)
 
-      if (flippedCards[0]?.image === flippedCards[1]?.image){ // matching
-        console.log("match")
+      if (flippedCards.length === 2){
+        console.log('dua')
+        if (flippedCards[0]?.image === flippedCards[1]?.image){ // matching
+          cards[index].match = true;
+          console.log("match")
+        } else if (flippedCards[0]?.image != flippedCards[1]?.image) {
+          console.log("noooooo mtach")
+          setTimeout(() => {
+            
+          }, 400)
+        }
+
       }
+
+      
+      
+
+      
     
+      console.log(cards)
 
     }
   
