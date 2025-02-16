@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './Card.css'
+// import './Card.css'
 import { assets } from '../../assets/assets'
 
 const Card = () => {
