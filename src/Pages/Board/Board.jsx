@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './Board.css'
 import { assets } from '../../assets/assets'
+import Bubchat from '../../components/Bubchat/Bubchat';
 
 
 const Board = () => {
+
+  const [showPopup, setShowPopup] = useState(false);
 
     const images = [
         assets['green'], assets['purple'], assets['coklat'], assets['yellow'],
@@ -31,8 +34,12 @@ const Board = () => {
         const shuffledCards = [...images, ...images] // Menambahkan gambar dua kali untuk pasangan
           .map((image, index) => ({ id: index, image, flipped: false, matched: false }))
           .sort(() => Math.random() - 0.5); // Mengacak kartu
-    
         setCards(shuffledCards);
+
+        const timer = setTimeout(()=>{
+          setShowPopup(true);
+        }, 4000)
+
       }, []);
 
       const handleCardClick = (index) => {
@@ -69,6 +76,9 @@ const Board = () => {
 
   return (
     <div className='board'>
+
+      <Bubchat/>
+
       {cards.map((card, index) => (
         <Card
           key={card.id}
