@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './Gift.css'
 import { assets } from '../../assets/assets';
+import Calendar from '../../components/Calendar/Calendar';
 
 const Gift = () => {
 
     const [choose, setChoose] = useState(null);
+    const MarkImage = <img src={assets.love} alt="Mark" className="mark" />;
 
     const handleChoice = (choice) => {
         setChoose(choose === choice ? null : choice);
@@ -12,27 +14,45 @@ const Gift = () => {
 
     console.log(choose)
 
-    const renderCheckMark = (item) => {
-        return choose === item ? 'mark' : ''; // condition ? valueIfTrue : valueIfFalse
-    };
-
   return (
     <div className='reward'>
-        <p>Choose what you like</p>
+        <p>Choose what do you like</p>
         <div className="list-reward">
             <div className="item dinner" onClick={() => handleChoice('Dinner')}> 
-                {choose === 'Dinner' && <img src={assets.love} alt="Mark" className="mark" />} 
+                {choose === 'Dinner' && MarkImage} 
                 Dinner
             </div>
             <div className="item aquarium" onClick={() => handleChoice('Aquarium')}> 
-                {choose === 'Aquarium' && <img src={assets.love} alt="Mark" className="mark" />} 
+                {choose === 'Aquarium' && MarkImage} 
                 Aquarium
             </div>
             <div className="item movie" onClick={() => handleChoice('Movie')}> 
-                {choose === 'Movie' && <img src={assets.love} alt="Mark" className="mark" />} 
+                {choose === 'Movie' && MarkImage} 
                 Movie 
             </div>
         </div>
+        <div className="when">
+            <Calendar choose={choose}/>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
     </div>
   )
 }
