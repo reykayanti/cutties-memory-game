@@ -3,6 +3,11 @@
     letter-spacing: 2px;
     font-size: 30px;
     height: 300px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
 .startthegame {
     margin-top: 30px;
@@ -34,11 +39,15 @@
 
 .floating-texta{
     text-align: center;
-    animation: floata 2s ease-in-out infinite;
+    animation: floata 2.1s ease-in-out infinite;
 }
 .floating-textb{
     text-align: center;
     animation: floatb 2s ease-in-out infinite;
+}
+.floating-textc{
+    text-align: center;
+    animation: floatc 2.2s ease-in-out infinite;
 }
 
 /* show popup */
@@ -61,7 +70,12 @@
     color: rgb(223, 97, 149);
     text-align: center;
 }
-
+.goal{
+    position: absolute;
+}
+.hidden{
+    display: none;
+}
 @keyframes spin {
     0% {
         transform: rotate(0deg);
