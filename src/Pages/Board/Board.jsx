@@ -7,8 +7,6 @@ import Won from '../../components/Won/Won';
 
 const Board = () => {
 
-  
-
     const images = [
         assets['green'], assets['purple'], assets['coklat'], assets['yellow'],
         assets['green'], assets['purple'], assets['coklat'], assets['yellow']
