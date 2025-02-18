@@ -6,7 +6,7 @@ const Bubchat = () => {
 
     <div className="bubble">
         <div className="chat-1">
-            hi Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus maxime iste ea iusto tempore saepe dolore nisi ducimus, perspiciatis quos.
+          Let's focus, you have to flip over 2 cards that have the same image.
         </div>
     </div>
 

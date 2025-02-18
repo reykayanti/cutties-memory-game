@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import './Board.css'
 import { assets } from '../../assets/assets'
 import Bubchat from '../../components/Bubchat/Bubchat';
+import Won from '../../components/Won/Won';
 
 
 const Board = () => {
 
-  const [showPopup, setShowPopup] = useState(false);
+  
 
     const images = [
         assets['green'], assets['purple'], assets['coklat'], assets['yellow'],
@@ -16,6 +17,8 @@ const Board = () => {
     const [cards, setCards] = useState([]);
     const [flippedIndexes, setFlippedIndexes] = useState([]);
     const [matchedCards, setMatchedCards] = useState([]);
+    const [gameWon, setGameWon] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
 
      //komponen card
      const Card = ({ image, onClick, flipped, id }) => {
@@ -41,6 +44,13 @@ const Board = () => {
         }, 4000)
 
       }, []);
+
+      //menang
+      useEffect(() => {
+        if (matchedCards.length === images.length) {
+          setGameWon(true); // Jika jumlah pasangan yang cocok sama dengan total kartu, maka pemain menang
+        }
+      }, [matchedCards]);
 
       const handleCardClick = (index) => {
         if (flippedIndexes.length === 2 || cards[index].flipped || cards[index].matched) {
@@ -77,7 +87,9 @@ const Board = () => {
   return (
     <div className='board'>
 
-      <Bubchat/>
+      {showPopup && 
+        <Bubchat/>
+      }
 
       {cards.map((card, index) => (
         <Card
@@ -88,6 +100,12 @@ const Board = () => {
           onClick={handleCardClick}
         />
       ))}
+
+      {gameWon 
+        && 
+        <Won/>
+      } 
+
     </div>
   )
 }

@@ -1,23 +1,26 @@
 .bubble {
     position: absolute;
     display: flex;
+    flex-direction: column;
+    gap: 30px;
     justify-content: flex-start; /* Menyusun ke kiri, bisa diubah ke kanan untuk chat lawan */
     padding: 10px;
     bottom: 50px;
     left: 10px;
+    width: 250px;
 }
 
 /* Membuat tampilan chat bubble */
 .chat-1 {
-    background-color: #e5a6c6; /* Warna biru untuk chat bubble */
-    color: white; /* Warna teks putih */
-    padding: 10px 15px; /* Padding dalam bubble */
-    border-radius: 15px; /* Membuat sudut membulat */
-    max-width: 20%; /* Lebar maksimal bubble */
-    font-size: 16px; /* Ukuran font */
-    line-height: 1.5; /* Jarak antar baris teks */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan lembut di bawah bubble */
-    position: relative; /* Agar bisa membuat ujung segitiga */
+    background-color: rgb(253, 165, 180); 
+    color: white; 
+    padding: 10px 15px;
+    border-radius: 15px; 
+    width: 100%;
+    font-size: 16px; 
+    line-height: 1.5; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    position: relative; 
 }
 
 /* Membuat ujung segitiga di sebelah kiri bubble */
@@ -29,7 +32,7 @@
     transform: translateY(-50%);
     border-width: 10px;
     border-style: solid;
-    border-color: transparent #e5a6c6 transparent transparent;
+    border-color: transparent rgb(253, 165, 180) transparent transparent;
 }
 
 /* Tambahkan style untuk elemen parent jika ingin lebih rapi */
