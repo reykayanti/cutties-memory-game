@@ -4,6 +4,7 @@ import green from './green.jpg'
 import yellow from './yellow.jpg'
 import button from './button.png'
 import tree from './tree.png'
+import gift from './gift.png'
 
 export const assets = {
     coklat,
@@ -11,5 +12,6 @@ export const assets = {
     green,
     yellow,
     button,
-    tree
+    tree,
+    gift
 }
